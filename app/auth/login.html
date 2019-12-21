@@ -1,0 +1,37 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="login">
+    <div class="container">
+        <div id="login-logo">
+            <div id="border">
+                <i class="fa fa-lock"></i>
+                <div id="shadow"></div>
+            </div>
+            <div id="elzero"><a ui-sref="home"></a> Axs Login</div>
+        </div>
+        <form autocomplete="off" method="POST" ng-submit="authCtrl.login()">
+            <div id="user">
+                <label for="inputEmail"></label>
+                <input type="email" name="" id="userInput" placeholder="Email address" required autofocus ng-model="authCtrl.user.email" />
+            </div>
+            <div id="Pass">
+                <label for="inputPassword"></label>
+                <input type="password" name="" id="passInput" placeholder="Password" required ng-model="authCtrl.user.password" />
+            </div>
+            <div id="remember">
+                <input type="checkbox" name="" id="checkbox" value="remember-me" />
+                <label for="checkbox">Remember me</label>
+                <span id="forgot">
+                    <a href="#">Go Back</a>
+                </span>
+            </div>
+            <div class="loading-icon text-center" ng-show="authCtrl.loginLoading">
+              <img class="icon" src="../images/infinity.gif" alt="Loading..." />
+            </div>
+            <input type="submit" value="Login" />
+                 <div ng-show="authCtrl.error">
+                    {{authCtrl.error}}
+                </div>
+        </form>
+    </div>
+</div>
